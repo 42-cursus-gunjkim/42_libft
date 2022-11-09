@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: gunjkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:10:43 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/09 16:09:15 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/09 13:37:37 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/09 13:38:30 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_islower(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
-}
-
-static int	ft_isupper(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_islower(c) || ft_isupper(c));
 }
