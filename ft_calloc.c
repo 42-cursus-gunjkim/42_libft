@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 15:47:20 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 15:46:48 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 15:50:57 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*mem;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
-
-#endif
+	if (count == 0 || size == 0)
+		return (NULL);
+	mem = malloc(count * size);
+	if (mem == NULL)
+		return (NULL);
+	ft_memset(mem, 0, count * size);
+	return (mem);
+}

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 15:47:20 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 16:17:32 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 16:22:02 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+char	*strdup(const char *s1)
+{
+	int		len_with_null;
+	char	*copy;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
-
-#endif
+	len_with_null = ft_strlen(s1) + 1;
+	copy = (char *)malloc(sizeof(char) * len_with_null);
+	if (copy == NULL)
+		return (NULL);
+	while (s1)
+	{
+		*copy = *s1;
+		copy++;
+		s1++;
+	}
+	*copy = '\0';
+	return (copy);
+}

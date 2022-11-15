@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 15:47:20 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 17:18:54 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 17:43:19 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	int	dst_len;
+	int	src_len;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
-
-#endif
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dst_len >= dstsize)
+		return (src_len + dstsize);
+	while (dst_len + 1 < dstsize && src != '\0')
+	{
+		dst[dst_len] = *src;
+		dst_len++;
+		src++;
+	}
+	dst[dst_len] = '\0';
+	return (dst_len + src_len);
+}
