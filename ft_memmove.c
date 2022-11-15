@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:07:54 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 18:08:57 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/15 18:17:17 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	int str[10] = {1,2,3,4,5,6,7,8,9};
-	ft_memmove(str, str, sizeof(int) * 10);
-	for(int i=0;i<10;i++)
-	{
-		printf("%d : ", str[i]);
-	}
 }
