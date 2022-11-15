@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 13:36:13 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 14:12:32 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 14:21:54 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	int				i;
+	unsigned char	*temp;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	temp = (unsigned char *)s;
+	c = (unsigned char)c;
+	while (i < n)
+	{
+		if (temp[i] == c)
+			return ((void *)(&temp[i]));
+		i++;
+	}
+	return (NULL);
+}

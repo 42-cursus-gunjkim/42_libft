@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 13:36:13 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 13:55:47 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 14:09:10 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	int	i;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	while (i < n && *s1 != '\0')
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}

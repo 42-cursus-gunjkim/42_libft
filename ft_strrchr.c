@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 13:36:13 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/15 13:42:47 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/15 14:09:13 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+char	*ft_strrchr(const char *s, int c)
+{
+	int		len_with_null;
+	int		i;
+	char	*last_loc;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-
-#endif
+	len_with_null = ft_strlen(s) + 1;
+	i = 0;
+	last_loc = NULL;
+	while (i < len_with_null)
+	{
+		if (*s == c)
+			last_loc = s;
+		s++;
+		i++;
+	}
+	return (last_loc);
+}
