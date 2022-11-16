@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:29:43 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/10 14:32:08 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:39:17 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				index;
+	size_t			index;
 	unsigned char	*temp;
 
 	index = 0;

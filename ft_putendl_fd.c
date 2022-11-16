@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:15:22 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 14:29:07 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:40:10 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
-	write(fd, "/n", 1);
+	write(fd, "\n", 1);
 }

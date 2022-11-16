@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:35:14 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 18:17:44 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:41:21 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (dstsize == 0)

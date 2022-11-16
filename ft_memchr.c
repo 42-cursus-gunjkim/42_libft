@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:12:32 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 14:21:54 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:39:36 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*temp;
 
 	i = 0;

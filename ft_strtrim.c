@@ -6,13 +6,13 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:18:48 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 19:55:17 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 17:00:12 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_set(char c, char const *set)
+static int	is_set(char c, char const *set)
 {
 	while (*set)
 	{
@@ -23,10 +23,10 @@ int	is_set(char c, char const *set)
 	return (0);
 }
 
-int	pre_suf_set(char const *s1, char const *set)
+static size_t	pre_suf_set(char const *s1, char const *set)
 {
 	char const	*temp;
-	int			len;
+	size_t		len;
 
 	temp = s1;
 	len = 0;
@@ -48,13 +48,15 @@ int	pre_suf_set(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		total_len;
+	size_t	total_len;
 	char	*str_trim;
-	int		index;
+	size_t	index;
 
 	index = 0;
 	total_len = ft_strlen(s1) - pre_suf_set(s1, set);
 	str_trim = (char *)malloc(sizeof(char) * (total_len + 1));
+	if (str_trim == NULL)
+		return (NULL);
 	if (total_len == 0)
 	{
 		*str_trim = '\0';

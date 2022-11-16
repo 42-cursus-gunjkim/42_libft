@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:42:47 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 14:09:13 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:36:24 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i < len_with_null)
 	{
 		if (*s == c)
-			last_loc = s;
+			last_loc = (char *)s;
 		s++;
 		i++;
 	}

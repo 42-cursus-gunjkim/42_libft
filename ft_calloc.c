@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:46:48 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 15:50:57 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:30:14 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*mem;
 
-	if (count == 0 || size == 0)
-		return (NULL);
 	mem = malloc(count * size);
 	if (mem == NULL)
 		return (NULL);

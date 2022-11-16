@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:39:42 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/10 15:12:40 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:40:39 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*src_temp;
 	unsigned char	*dst_temp;
-	int				index;
+	size_t			index;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	index = 0;
 	src_temp = (unsigned char *)src;
 	dst_temp = (unsigned char *)dst;
