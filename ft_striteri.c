@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:58:07 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 14:02:48 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 14:37:25 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	index;
-	
+
 	index = 0;
 	while (s[index] != '\0')
 	{
