@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:22:16 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/15 15:29:19 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/16 13:48:49 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_isspace(int c)
 int	ft_atoi(const char *str)
 {
 	int	sign;
-	int	result;
+	long long	result;
 
 	sign = 1;
 	result = 0;

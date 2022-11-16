@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:38:37 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 14:03:26 by gunjkim          ###   ########.fr       */
+/*   Created: 2022/11/16 13:41:31 by gunjkim           #+#    #+#             */
+/*   Updated: 2022/11/16 14:29:12 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		s_len;
+	int		index;
+	char	*new_str;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-
-#endif
+	index = 0;
+	s_len = ft_strlen(s);
+	new_str = (char *)malloc(sizeof(char) * s_len + 1);
+	if (new_str == NULL)
+		return (NULL);
+	while (index < s_len)
+	{
+		new_str[index] = f(index, s[index]);
+		index++;
+	}
+	new_str[index] = '\0';
+	return (new_str);
+}
