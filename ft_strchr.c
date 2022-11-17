@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:34:58 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 15:34:21 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/17 15:37:30 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ char	*ft_strchr(const char *s, int c)
 	c = (char)c;
 	while (i < len_with_null)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (s[i] == c)
+			return ((char *)(&s[i]));
 		i++;
 	}
 	return (NULL);
