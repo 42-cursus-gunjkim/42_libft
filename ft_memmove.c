@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:07:54 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 16:47:38 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:21:45 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t			index;
 	unsigned char	*dst_tmp;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
+	if (dst == src)
+		return (dst);
 	index = 0;
 	dst_tmp = (unsigned char *)dst;
 	if (dst >= src)

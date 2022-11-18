@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:42:47 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/17 15:38:18 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:31:31 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		index_with_null;
+	size_t	index;
+	size_t	s_len;
 	char	*last_loc;
+	char	c_tmp;
 
-	index_with_null = ft_strlen(s);
-	c = (char)c;
+	index = 0;
+	s_len = ft_strlen(s);
+	c_tmp = (char)c;
 	last_loc = NULL;
-	while (index_with_null >= 0)
+	while (index <= s_len)
 	{
-		if (s[index_with_null] == c)
-			return ((char *)(&s[index_with_null]));
-		index_with_null--;
+		if (s[index] == c_tmp)
+			last_loc = (char *)(&(s[index]));
+		index++;
 	}
 	return (last_loc);
 }

@@ -1,7 +1,6 @@
+NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
-NAME = libft.a
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	   ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c\
@@ -14,27 +13,34 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c\
 			ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
-
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME)
+all: make_mandatory
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar cr $@ $^
+	ar rcs $@ $(OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $^
+bonus: make_bonus
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f make_mandatory make_bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-phony. : clean fclean re bonus
+make_mandatory: $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	touch $@
+
+make_bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $^
+	touch $@
+
+phony. : all clean fclean re bonus

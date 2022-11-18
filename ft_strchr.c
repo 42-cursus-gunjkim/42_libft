@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:34:58 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/17 15:37:30 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:24:59 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	len_with_null;
-	int	i;
+	size_t	len_with_null;
+	size_t	i;
 
 	len_with_null = ft_strlen(s) + 1;
 	i = 0;
