@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:06:16 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/17 22:17:37 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/18 15:09:49 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_node;
 	t_list	*new_head;
+	void	*f_content;
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
 	new_head = NULL;
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		f_content = f(lst->content);
+		new_node = ft_lstnew(f_content);
 		if (new_node == NULL)
 		{
+			free(f_content);
 			ft_lstclear(&new_head, del);
 			return (NULL);
 		}

@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:32:24 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 18:50:41 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/18 14:15:51 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)malloc(sizeof(char) * real_len + 1);
 	if (substr == NULL)
 		return (NULL);
-	while (index < real_len)
-	{
-		substr[index] = s[start + index];
-		index++;
-	}
-	substr[index] = '\0';
+	ft_strlcpy(substr, s + start, real_len + 1);
 	return (substr);
 }
