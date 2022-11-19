@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:32:24 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/18 14:15:51 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/19 12:44:09 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		real_len;
 	char	*substr;
-	int		index;
 
-	index = 0;
 	real_len = len;
 	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));
