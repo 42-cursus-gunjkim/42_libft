@@ -6,15 +6,15 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:11:51 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/16 14:29:10 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/21 13:37:06 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	d_count(int n)
+static size_t	d_count(int n)
 {
-	int	dc;
+	size_t	dc;
 
 	dc = 0;
 	if (n <= 0)
@@ -29,7 +29,7 @@ static int	d_count(int n)
 
 char	*ft_itoa(int n)
 {
-	int			dc;
+	size_t		dc;
 	char		*result;
 	long long	n_tmp;	
 
