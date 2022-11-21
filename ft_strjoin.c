@@ -6,7 +6,7 @@
 /*   By: gunjkim <gunjkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:51:16 by gunjkim           #+#    #+#             */
-/*   Updated: 2022/11/17 17:21:57 by gunjkim          ###   ########.fr       */
+/*   Updated: 2022/11/21 20:34:21 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new_str;
-	int		total_len;
+	size_t	total_len;
 
 	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	new_str = (char *)malloc(sizeof(char) * total_len);

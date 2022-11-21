@@ -16,31 +16,34 @@ BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c\
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: make_mandatory
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar rcs $@ $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	touch $@
 
-bonus: make_bonus
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $^
+	touch $@
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
-	rm -f make_mandatory make_bonus
+	rm -f mandatory bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-make_mandatory: $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-	touch $@
+# make_mandatory: $(OBJS)
+# 	ar rcs $(NAME) $(OBJS)
+# 	touch $@
 
-make_bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $^
-	touch $@
+# make_bonus: $(OBJS) $(BONUS_OBJS)
+# 	ar rcs $(NAME) $^
+# 	touch $@
 
 phony. : all clean fclean re bonus
