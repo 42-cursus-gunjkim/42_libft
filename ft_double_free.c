@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_double_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunjkim <gunjkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 15:22:16 by gunjkim           #+#    #+#             */
-/*   Updated: 2023/03/14 15:19:08 by gunjkim          ###   ########.fr       */
+/*   Created: 2023/03/09 14:22:07 by gunjkim           #+#    #+#             */
+/*   Updated: 2023/03/09 15:20:02 by gunjkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+void	ft_double_free(char **argv)
 {
-	if ((c >= 9 && c <= 13) || c == 32)
-		return (1);
-	return (0);
-}
+	char	**tmp;
 
-int	ft_atoi(const char *str)
-{
-	int			sign;
-	long long	result;
-
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_isdigit(*str))
+	tmp = argv;
+	if (argv == NULL)
+		return ;
+	while (*tmp != NULL)
 	{
-		result = result * 10 + (*str - '0');
-		str++;
+		free(*tmp);
+		tmp++;
 	}
-	return (result * sign);
+	free(argv);
 }
